@@ -9,6 +9,6 @@
 
     <manifest:file-entry
         manifest:media-type="application/vnd.sun.star.uno-component"
-        manifest:full-path="altinkaynak/"/>
+        manifest:full-path="pythonpath/"/>
 
 </manifest:manifest>
