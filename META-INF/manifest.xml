@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest:manifest
+ xmlns:manifest="http://openoffice.org/2001/manifest">
+
+    <manifest:file-entry
+        manifest:media-type="application/vnd.sun.star.configuration-addon"
+        manifest:full-path="Addons.xcu"/>
+
+    <manifest:file-entry
+        manifest:media-type="application/vnd.sun.star.uno-component"
+        manifest:full-path="altinkaynak/"/>
+
+</manifest:manifest>
