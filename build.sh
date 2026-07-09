@@ -1,19 +1,36 @@
 #!/bin/bash
-
 set -e
 
-NAME="altinkaynak-calc-extension.oxt"
+APP="altinkaynak-calc-extension"
+BUILD="build"
+OXT="$BUILD/oxt"
 
-echo "Altinkaynak Calc Extension build"
+echo "==> Cleaning..."
+rm -rf "$BUILD"
+mkdir -p "$OXT"
 
-rm -f "$NAME"
+echo "==> Copying extension files..."
 
-zip -r "$NAME" \
-    Addons.xcu \
-    description.xml \
-    META-INF \
-    pythonpath \
-    README.md \
-    LICENSE
+cp description.xml "$OXT/"
+cp LICENSE "$OXT/"
+cp README.md "$OXT/"
 
-echo "Oluşturuldu: $NAME"
+cp Addons.xcu "$OXT/" 2>/dev/null || true
+
+mkdir -p "$OXT/META-INF"
+cp META-INF/manifest.xml "$OXT/META-INF/" 2>/dev/null || true
+
+mkdir -p "$OXT/python"
+
+cp src/*.py "$OXT/python/"
+
+echo "==> Creating OXT..."
+
+(
+    cd "$OXT"
+    zip -qr "../${APP}.oxt" .
+)
+
+echo
+echo "Done:"
+echo "$BUILD/${APP}.oxt"

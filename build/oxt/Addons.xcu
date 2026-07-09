@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<oor:component-data
+    xmlns:oor="http://openoffice.org/2001/registry"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    oor:name="Addons"
+    oor:package="org.openoffice.Office">
+
+    <node oor:name="AddonUI">
+
+        <node oor:name="OfficeMenuBar">
+
+            <node oor:name="AltinkaynakMenu"
+                  oor:op="replace">
+
+                <prop oor:name="Title">
+                    <value>Altınkaynak</value>
+                </prop>
+
+                <node oor:name="Item1"
+                      oor:op="replace">
+
+                    <prop oor:name="Title">
+                        <value>Kurları Güncelle</value>
+                    </prop>
+
+                    <prop oor:name="URL">
+                        <value>service:altinkaynak?method=guncelle</value>
+                    </prop>
+
+                </node>
+
+            </node>
+
+        </node>
+
+    </node>
+
+</oor:component-data>
